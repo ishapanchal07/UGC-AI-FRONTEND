@@ -15,7 +15,7 @@ export default function CTA() {
                             viewport={{ once: true }}
                             transition={{ type: "spring", stiffness: 250, damping: 70, mass: 1 }}
                         >
-                            Ready to grow your brand?
+                            Ready to Transform Your Content?
                         </motion.h2>
                         <motion.p className="max-sm:text-sm text-slate-400 mb-10 max-w-xl mx-auto"
                             initial={{ y: 60, opacity: 0 }}
