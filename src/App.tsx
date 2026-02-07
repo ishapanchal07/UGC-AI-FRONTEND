@@ -7,7 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 import Generator from './pages/Generator';
 import Result from './pages/Result';
 import MyGenerations from './pages/MyGenerations';
-import Community from './pages/Commnity';
+import Community from './pages/Community';
 import Plans from './pages/Plans';
 import Loading from './pages/Loading';
 
