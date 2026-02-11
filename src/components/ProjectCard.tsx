@@ -51,6 +51,7 @@ const ProjectCard = ({gen, setGenerations, forCommunity = false} : {gen: Project
 
                    {/* details */}
                    <div className="p-4">
+                    {/* product name, date, aspect ration */}
                     <div className="flex items-start justify-between gap-4">
                         <div className="felx-1">
                             <h3 className="font-medium text-lg mb-1">{gen.productName}</h3>
@@ -59,12 +60,28 @@ const ProjectCard = ({gen, setGenerations, forCommunity = false} : {gen: Project
                                 <p className="text-xs text-gray-500 mt-1">Updated: {new Date(gen.updatedAt).toLocaleString()}</p>
                             )}
                         </div>
-                        <div>
-                            <div>
-                                <span>Aspect: </span>
+                        <div className="text-right">
+                            <div className="mt-2 flex flex-col items-end gap-1">
+                                <span className="text-xs px-2 py-1 bg-white/5 rounded-full">Aspect: {gen.aspectRatio}</span>
                             </div>
                         </div>
                     </div>
+
+                    {/* product description */}
+                    {gen.productDescription && (
+                        <div className="mt-3">
+                            <p className="text-xs text-gray-400 mb-1">Description</p>
+                            <div className="text-sm text-gray-300 bg-white/3 p-2 rounded-md wrap-break-word">{gen.productDescription}</div>
+                        </div>
+                    )}
+
+                    {/* user prompt */}
+                    {gen.userPrompt && (
+                        <div className="mt-3">
+                            <div className="text-xs text-gray-300">{gen.userPrompt}</div>
+                        </div>
+                    )}
+
                    </div>
                 </div>
             </div>
