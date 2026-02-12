@@ -3,6 +3,7 @@ import { dummyGenerations } from "../assets/assets"
 import type { Project } from "../types"
 import { Loader2Icon } from "lucide-react"
 import ProjectCard from "../components/ProjectCard"
+import { PrimaryButton } from "../components/Buttons"
 
 
 const MyGenerations = () => {
@@ -34,9 +35,19 @@ const MyGenerations = () => {
                 {/* generation list */}
                 <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
                     {generations.map((project)=>(
-                        <ProjectCard key={project.id} gen={project} setGenerations={setGenerations} forCommunity={false}/>
+                        <ProjectCard key={project.id} gen={project} setGenerations={setGenerations}/>
                     ))}
                 </div>
+
+                {generations.length === 0 && (
+                    <div className="text-center py-20 bg-white/5 rounded-xl border border-white/10">
+                        <h3 className="text-xl font-medium mb-2">No generations yet</h3>
+                        <p className="text-gray-400 mb-6">Start creating stunning product photos today</p>
+                        <PrimaryButton onClick={()=>window.location.href = '/generate'}>
+                            Create New Generation
+                        </PrimaryButton>
+                    </div>
+                )}
             </div>
         </div>
     )
